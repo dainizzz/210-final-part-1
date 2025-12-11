@@ -50,9 +50,9 @@ int main() {
 			maxAirports.insert(airport.first);
 	}
 
-	cout << "Busiest airports:" << endl;
+	cout << endl << "Busiest airport(s) with count " << max << ':' << endl;
 	for (auto airport : maxAirports) {
-		cout << airport << endl;
+		cout << airport << ' ' << max << endl;
 	}
 
 	return 0;
