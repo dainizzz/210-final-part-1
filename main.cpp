@@ -31,6 +31,7 @@ int main() {
 	}
 	infile.close();
 
+	cout << "All airport traffic counts:" << endl;
 	for (auto airport : airports) {
 		cout << airport.first << ": " << airport.second << endl;
 	}
