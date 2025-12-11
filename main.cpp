@@ -58,8 +58,8 @@ int main() {
 		cout << airport << ' ' << max << endl;
 	}
 
-	printAirportsInRange(5, 8, airports);
-	printAirportsInRange(9, 12, airports);
+	printAirportsInRange(1, 10, airports);
+	printAirportsInRange(20, 30, airports);
 
 	return 0;
 }
