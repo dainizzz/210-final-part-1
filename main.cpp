@@ -5,6 +5,9 @@
 
 using namespace std;
 
+// MILESTONE 3
+void printAirportsInRange(int, int, map<string, int>&);
+
 int main() {
 	// MILESTONE 1
 	map <string, int> airports;
@@ -55,5 +58,16 @@ int main() {
 		cout << airport << ' ' << max << endl;
 	}
 
+	printAirportsInRange(5, 8, airports);
+	printAirportsInRange(9, 12, airports);
+
 	return 0;
+}
+
+void printAirportsInRange(int low, int high, map<string, int> &airports) {
+	cout << endl << "Airports with traffic in range [" << low << ", " << high << "]:" << endl;
+	for (auto airport : airports) {
+		if (airport.second >= low && airport.second <= high )
+			cout << airport.first << " " << airport.second << endl;
+	}
 }
