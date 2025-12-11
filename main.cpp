@@ -1,6 +1,7 @@
 #include <iostream>
 #include <map>
 #include <fstream>
+#include <set>
 
 using namespace std;
 
@@ -34,6 +35,24 @@ int main() {
 	cout << "All airport traffic counts:" << endl;
 	for (auto airport : airports) {
 		cout << airport.first << ": " << airport.second << endl;
+	}
+
+	// MILESTONE 2
+	int max = 0;
+	for (auto airport : airports) {
+		if (airport.second > max)
+			max = airport.second;
+	}
+
+	set<string> maxAirports;
+	for (auto airport : airports) {
+		if (airport.second == max)
+			maxAirports.insert(airport.first);
+	}
+
+	cout << "Busiest airports:" << endl;
+	for (auto airport : maxAirports) {
+		cout << airport << endl;
 	}
 
 	return 0;
