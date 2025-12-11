@@ -6,11 +6,11 @@
 using namespace std;
 
 // MILESTONE 3
-void printAirportsInRange(int, int, map<string, int>&);
+void printAirportsInRange(int, int, const map<string, int> &);
 
 int main() {
 	// MILESTONE 1
-	map <string, int> airports;
+	map<string, int> airports;
 	string origin, destination;
 	ifstream infile;
 
@@ -29,32 +29,32 @@ int main() {
 			else
 				search->second++;
 		}
-	}else {
+	} else {
 		cout << "Error opening file" << endl;
 		exit(2);
 	}
 	infile.close();
 
 	cout << "All airport traffic counts:" << endl;
-	for (auto airport : airports) {
-		cout << airport.first << ": " << airport.second << endl;
+	for (auto airport: airports) {
+		cout << airport.first << " " << airport.second << endl;
 	}
 
 	// MILESTONE 2
 	int max = 0;
-	for (auto airport : airports) {
+	for (auto airport: airports) {
 		if (airport.second > max)
 			max = airport.second;
 	}
 
 	set<string> maxAirports;
-	for (auto airport : airports) {
+	for (auto airport: airports) {
 		if (airport.second == max)
 			maxAirports.insert(airport.first);
 	}
 
 	cout << endl << "Busiest airport(s) with count " << max << ':' << endl;
-	for (auto airport : maxAirports) {
+	for (auto airport: maxAirports) {
 		cout << airport << ' ' << max << endl;
 	}
 
@@ -64,10 +64,10 @@ int main() {
 	return 0;
 }
 
-void printAirportsInRange(int low, int high, map<string, int> &airports) {
+void printAirportsInRange(int low, int high, const map<string, int> &airports) {
 	cout << endl << "Airports with traffic in range [" << low << ", " << high << "]:" << endl;
-	for (auto airport : airports) {
-		if (airport.second >= low && airport.second <= high )
+	for (auto airport: airports) {
+		if (airport.second >= low && airport.second <= high)
 			cout << airport.first << " " << airport.second << endl;
 	}
 }
